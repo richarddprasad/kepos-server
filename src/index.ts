@@ -1,7 +1,7 @@
 import "reflect-metadata";
 import { createConnection } from "typeorm";
 import { UserEntity } from "./entities";
-import express, { Request, Response } from "express";
+import { app } from "./server";
 import {
   PORT,
   PGHOST,
@@ -10,7 +10,6 @@ import {
   PGPASSWORD,
   PGDATABASE,
 } from "./config/constants";
-import { userRouter } from "./routes";
 
 createConnection({
   type: "postgres",
@@ -25,14 +24,6 @@ createConnection({
   synchronize: true,
   logging: false,
 }).then(async (connection) => {
-  const app = express();
-  app.use(express.json());
-  app.use("/users", userRouter);
-
-  app.get("/", (req: Request, res: Response) => {
-    res.send({ message: "Hi" });
-  });
-
   app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
   });
