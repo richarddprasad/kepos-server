@@ -9,27 +9,24 @@ import {
     ID,
 } from 'type-graphql'
 import {
-    MAX_FIRST_NAME_LENGTH,
-    MAX_LAST_NAME_LENGTH,
+    MAX_ITEM_NAME_LENGTH,
+    ITEM_CATEGORY
 } from '../../config/constants';
 
 @Entity()
 @ObjectType()
-export class User {
+export class Item {
     @PrimaryGeneratedColumn()
     @Field(type => ID)
     public id!: number;
 
     @Column({
-        length: MAX_FIRST_NAME_LENGTH,
+        length: MAX_ITEM_NAME_LENGTH,
     })
     @Field()
-    public firstName!: string;
+    public name!: string;
 
-    @Column({
-        length: MAX_LAST_NAME_LENGTH,
-    })
+    @Column()
     @Field()
-    public lastName!: string;
-
+    public category!: ITEM_CATEGORY;
 }

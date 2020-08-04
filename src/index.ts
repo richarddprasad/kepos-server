@@ -1,6 +1,9 @@
 import "reflect-metadata";
 import { createConnection } from "typeorm";
-import { UserEntity } from "./entities";
+import {
+  UserEntity,
+  ItemEntity,
+} from "./entities";
 import { app } from "./server";
 import {
   PORT,
@@ -20,6 +23,7 @@ createConnection({
   database: PGDATABASE,
   entities: [
     UserEntity,
+    ItemEntity,
   ],
   synchronize: true,
   logging: false,

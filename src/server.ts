@@ -1,10 +1,12 @@
 import express, { Request, Response } from "express";
-import { userRouter } from "./routes";
+import {
+  userRouter,
+  itemRouter,
+} from "./routes";
 
-export const app = express();
+const app = express();
 app.use(express.json());
 app.use("/users", userRouter);
+app.use("/items", itemRouter);
 
-app.get("/", (req: Request, res: Response) => {
-  res.send({ message: "Hi" });
-});
+export { app };

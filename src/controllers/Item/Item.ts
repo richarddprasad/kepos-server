@@ -1,21 +1,21 @@
 import { Request, Response } from "express";
 import { CrudController } from "../CrudController";
 import { getConnection } from "typeorm";
-import { UserEntity } from "../../entities";
+import { ItemEntity } from "../../entities";
 
-export class UserController extends CrudController {
+export class ItemController extends CrudController {
   public create(req: Request, res: Response): void {
     throw new Error("Method not implemented.");
   }
 
   public async read(req: Request, res: Response): Promise<void> {
-    // const users = await getConnection().getRepository(UserEntity).find();
+    // const items = await getConnection().getRepository(ItemEntity).find();
 
-    // console.log('USERS FETCHED', users);
+    // console.log('ITEMS FETCHED', items);
 
-    // res.json(users);
+    // res.json(items);
 
-    res.send('USERS');
+    res.status(200).send('ITEMS');
   }
 
   public update(req: Request, res: Response): void {
