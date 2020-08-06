@@ -9,13 +9,13 @@ export class ItemController extends CrudController {
   }
 
   public async read(req: Request, res: Response): Promise<void> {
-    // const items = await getConnection().getRepository(ItemEntity).find();
+    const items = await getConnection().getRepository(ItemEntity).find();
 
     // console.log('ITEMS FETCHED', items);
 
-    // res.json(items);
+    res.json(items);
 
-    res.status(200).send('ITEMS');
+    // res.status(200).send('ITEMS');
   }
 
   public update(req: Request, res: Response): void {
