@@ -10,12 +10,7 @@ export class UserController extends CrudController {
 
   public async read(req: Request, res: Response): Promise<void> {
     const users = await getConnection().getRepository(UserEntity).find();
-
-    // console.log('USERS FETCHED', users);
-
     res.json(users);
-
-    // res.send('USERS');
   }
 
   public update(req: Request, res: Response): void {
