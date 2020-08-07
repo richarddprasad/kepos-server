@@ -38,7 +38,7 @@ export class User {
   @Field({
     nullable: true,
   })
-  public firstName!: string;
+  public firstName?: string;
 
   @Column({
     length: MAX_LAST_NAME_LENGTH,
@@ -47,7 +47,7 @@ export class User {
   @Field({
     nullable: true,
   })
-  public lastName!: string;
+  public lastName?: string;
 
   @Column({
     length: MAX_DISPLAY_NAME_LENGTH,
@@ -61,7 +61,7 @@ export class User {
   @Field({
     nullable: true,
   })
-  public dateOfBirth!: Date;
+  public dateOfBirth?: Date;
 
   @Column({
     nullable: true,
@@ -69,5 +69,5 @@ export class User {
   @Field({
     nullable: true,
   })
-  public gender!: GENDER;
+  public gender?: GENDER;
 }

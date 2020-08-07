@@ -45,6 +45,7 @@ async function insertDummyUsers(connection: Connection) {
   }
 }
 
+// TypeORM Setup
 createConnection({
   type: "postgres",
   host: PGHOST,

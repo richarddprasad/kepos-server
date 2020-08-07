@@ -1,4 +1,4 @@
-import { UserService } from './User/User';
+import { UserService } from './User/user.service';
 
 export {
     UserService,
