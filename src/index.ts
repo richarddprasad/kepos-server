@@ -24,12 +24,20 @@ async function insertDummyUsers(connection: Connection) {
   u1.displayName = "Max Power";
   u1.gender = GENDER.MALE;
 
+  const u2 = new UserEntity();
+  u2.email = "patrick@nick.com";
+  u2.firstName = "Patrick";
+  u2.lastName = "Star";
+  u2.displayName = "King Patrick";
+  u2.gender = GENDER.MALE;
+
   let userRepo = connection.getRepository(UserEntity);
   await userRepo.clear();
 
   try {
     await userRepo.save(u1);
-
+    await userRepo.save(u2);
+    
     let allUsers = await userRepo.find();
     console.log("Users:", allUsers);
   } catch (err) {

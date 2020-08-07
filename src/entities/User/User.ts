@@ -22,7 +22,7 @@ import {
 @ObjectType()
 export class User {
   @PrimaryGeneratedColumn()
-  @Field((type) => ID)
+  @Field(type => ID)
   public id!: number;
 
   @Column({
@@ -35,14 +35,18 @@ export class User {
     length: MAX_FIRST_NAME_LENGTH,
     nullable: true,
   })
-  @Field()
+  @Field({
+    nullable: true,
+  })
   public firstName!: string;
 
   @Column({
     length: MAX_LAST_NAME_LENGTH,
     nullable: true,
   })
-  @Field()
+  @Field({
+    nullable: true,
+  })
   public lastName!: string;
 
   @Column({
@@ -54,12 +58,16 @@ export class User {
   @Column({
     nullable: true,
   })
-  @Field()
+  @Field({
+    nullable: true,
+  })
   public dateOfBirth!: Date;
 
   @Column({
     nullable: true,
   })
-  @Field()
+  @Field({
+    nullable: true,
+  })
   public gender!: GENDER;
 }
